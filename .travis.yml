@@ -1,0 +1,12 @@
+dist: bionic
+language: ruby
+rvm: 2.6
+script: bundle exec rake test
+addons:
+  apt:
+    packages:
+    - libgsl0-dev
+notifications:
+  email:
+    on_success: never
+    on_failure: change
