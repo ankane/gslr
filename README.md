@@ -2,6 +2,8 @@
 
 :fire: High performance linear regression for Ruby, powered by [GSL](https://www.gnu.org/software/gsl/)
 
+[![Build Status](https://travis-ci.org/ankane/gslr.svg?branch=master)](https://travis-ci.org/ankane/gslr)
+
 ## Installation
 
 [Install GSL](#gsl-installation). For Homebrew, use:
