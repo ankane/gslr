@@ -4,7 +4,7 @@ module GSLR
 
     libs = GSLR.ffi_lib.dup
     begin
-      dlload libs.shift
+      dlload Fiddle.dlopen(libs.shift)
     rescue Fiddle::DLError => e
       retry if libs.any?
       raise e if ENV["GSLR_DEBUG"]
