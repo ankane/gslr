@@ -2,10 +2,11 @@ dist: bionic
 language: ruby
 rvm: 2.6
 script: bundle exec rake test
+cache: bundler
 addons:
   apt:
     packages:
-    - libgsl0-dev
+    - libgsl-dev
 notifications:
   email:
     on_success: never

@@ -2,6 +2,19 @@ module GSLR
   module FFI
     extend Fiddle::Importer
 
+    # must link a cblas lib on some platforms
+    # https://lists.gnu.org/archive/html/bug-gsl/2017-04/msg00008.html
+    if GSLR.cblas_lib.any?
+      libs = GSLR.cblas_lib.dup
+      begin
+        Fiddle.dlopen(libs.shift)
+      rescue Fiddle::DLError => e
+        retry if libs.any?
+        raise e if ENV["GSLR_DEBUG"]
+        raise LoadError, "Could not find CBLAS"
+      end
+    end
+
     libs = GSLR.ffi_lib.dup
     begin
       dlload Fiddle.dlopen(libs.shift)

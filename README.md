@@ -94,7 +94,7 @@ Check out [the options](https://www.gnu.org/software/gsl/extras/native_win_build
 ### Ubuntu
 
 ```sh
-sudo apt-get install libgsl0-dev
+sudo apt-get install libgsl-dev
 ```
 
 ## Heroku
@@ -102,7 +102,7 @@ sudo apt-get install libgsl0-dev
 Use the [Apt buildpack](https://github.com/heroku/heroku-buildpack-apt) and create an `Aptfile` with:
 
 ```text
-libgsl0-dev
+libgsl-dev
 ```
 
 ## Travis CI
@@ -113,7 +113,7 @@ Add to `.travis.yml`:
 addons:
   apt:
     packages:
-    - libgsl0-dev
+    - libgsl-dev
 ```
 
 ## History
