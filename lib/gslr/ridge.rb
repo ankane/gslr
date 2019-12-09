@@ -24,8 +24,8 @@ module GSLR
       work = FFI.gsl_multifit_linear_alloc(s1, s2)
 
       # fit
-      FFI.gsl_multifit_linear_svd(xc, work)
-      FFI.gsl_multifit_linear_solve(Math.sqrt(@alpha), xc, yc, c, rnorm, snorm, work)
+      check_status FFI.gsl_multifit_linear_svd(xc, work)
+      check_status FFI.gsl_multifit_linear_solve(Math.sqrt(@alpha), xc, yc, c, rnorm, snorm, work)
 
       # read solution
       c_ptr = FFI.gsl_vector_ptr(c, 0)
@@ -83,7 +83,7 @@ module GSLR
       end
 
       yc = set_vector(y)
-      FFI.gsl_vector_add_constant(yc, -y_offset)
+      check_status FFI.gsl_vector_add_constant(yc, -y_offset)
 
       [yc, y_offset]
     end

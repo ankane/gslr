@@ -16,9 +16,9 @@ module GSLR
       # fit
       if weight
         wc = set_vector(weight)
-        FFI.gsl_multifit_wlinear(xc, wc, yc, c, cov, chisq, work)
+        check_status FFI.gsl_multifit_wlinear(xc, wc, yc, c, cov, chisq, work)
       else
-        FFI.gsl_multifit_linear(xc, yc, c, cov, chisq, work)
+        check_status FFI.gsl_multifit_linear(xc, yc, c, cov, chisq, work)
       end
 
       # read solution

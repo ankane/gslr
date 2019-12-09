@@ -24,6 +24,9 @@ module GSLR
       raise LoadError, "Could not find GSL"
     end
 
+    # https://www.gnu.org/software/gsl/doc/html/err.html
+    extern "char * gsl_strerror(int gsl_errno)"
+
     # https://www.gnu.org/software/gsl/doc/html/vectors.html
     extern "gsl_vector * gsl_vector_alloc(size_t n)"
     extern "void gsl_vector_free(gsl_vector * v)"

@@ -73,5 +73,9 @@ module GSLR
     def dfloat(x)
       x.is_a?(Numo::DFloat) ? x : x.cast_to(Numo::DFloat)
     end
+
+    def check_status(status)
+      raise Error, FFI.gsl_strerror(status).to_s if status != 0
+    end
   end
 end
