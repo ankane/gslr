@@ -101,7 +101,7 @@ Check out [the options](https://www.gnu.org/software/gsl/extras/native_win_build
 ### Ubuntu
 
 ```sh
-sudo apt-get install libgsl-dev
+sudo apt install libgsl-dev
 ```
 
 ### Heroku
