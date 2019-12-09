@@ -49,6 +49,13 @@ model.coefficients
 model.intercept
 ```
 
+Get the covariance matrix and chi-squared
+
+```ruby
+model.covariance
+model.chi2
+```
+
 Pass weights
 
 ```ruby

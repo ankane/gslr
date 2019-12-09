@@ -1,4 +1,4 @@
-## 0.1.2 (unreleased)
+## 0.1.2 (2019-12-08)
 
 - Added `covariance` and `chi2` methods
 
