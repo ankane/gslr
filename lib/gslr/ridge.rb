@@ -25,7 +25,7 @@ module GSLR
 
       # fit
       FFI.gsl_multifit_linear_svd(xc, work)
-      FFI.gsl_multifit_linear_solve(Math.sqrt(@alpha), xc, yc, c, rnorm.ref, snorm.ref, work)
+      FFI.gsl_multifit_linear_solve(Math.sqrt(@alpha), xc, yc, c, rnorm, snorm, work)
 
       # read solution
       c_ptr = FFI.gsl_vector_ptr(c, 0)

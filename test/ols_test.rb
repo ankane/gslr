@@ -16,6 +16,13 @@ class OLSTest < Minitest::Test
     predictions = model.predict(x)
     assert_equal 4, predictions.size
     assert_in_delta 10, predictions[0]
+
+    covariance = model.covariance
+    assert_equal 3, covariance.size
+    assert_equal 3, covariance.first.size
+    assert_in_delta 0, covariance[0][0]
+
+    assert_in_delta 0, model.chi2
   end
 
   def test_no_intercept
