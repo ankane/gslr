@@ -37,7 +37,7 @@ module GSLR
         one = [1].pack("d*")
         x.each do |xi|
           str << one if intercept
-          str << xi.pack("d*")
+          xi.pack("d*", buffer: str)
         end
         x_ptr[0, str.bytesize] = str
       end

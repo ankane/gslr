@@ -66,7 +66,7 @@ module GSLR
         # pack efficiently
         str = String.new
         x.each do |xi|
-          str << xi.zip(x_offset).map { |v, o| v - o }.pack("d*")
+          xi.zip(x_offset).map { |v, o| v - o }.pack("d*", buffer: str)
         end
         x_ptr[0, str.bytesize] = str
       end
