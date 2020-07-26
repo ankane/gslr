@@ -21,7 +21,12 @@ module GSLR
     rescue Fiddle::DLError => e
       retry if libs.any?
       raise e if ENV["GSLR_DEBUG"]
-      raise LoadError, "Could not find GSL"
+
+      if e.message.include?("libgsl.dylib")
+        raise LoadError, "GSL not found. Run `brew install gsl`"
+      else
+        raise LoadError, "GSL not found"
+      end
     end
 
     # https://www.gnu.org/software/gsl/doc/html/err.html
