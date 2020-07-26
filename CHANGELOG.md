@@ -1,4 +1,4 @@
-## 0.1.3 (unreleased)
+## 0.1.3 (2020-07-26)
 
 - Improved performance
 - Improved error message when GSL not found on Mac
