@@ -15,6 +15,8 @@ module GSLR
 
         if weight
           # TODO apply weights before centering
+          # not a great way to calculate and subtract the mean
+          # with GSL and FFI
           raise "weight not supported with intercept yet"
         end
       else
