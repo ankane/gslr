@@ -11,7 +11,7 @@ module GSLR
       rescue Fiddle::DLError => e
         retry if libs.any?
         raise e if ENV["GSLR_DEBUG"]
-        raise LoadError, "Could not find GSL"
+        raise LoadError, "GSL CBLAS not found"
       end
     end
 
