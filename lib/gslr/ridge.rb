@@ -5,16 +5,26 @@ module GSLR
       @alpha = alpha
     end
 
-    def fit(x, y)
+    def fit(x, y, weight: nil)
       if @fit_intercept
         # the intercept should not be regularized
         # so we need to center x and y
         # and exclude the intercept
         xc, x_offset, s1, s2 = centered_matrix(x)
         yc, y_offset = centered_vector(y)
+
+        if weight
+          raise "weight not supported with intercept yet"
+        end
       else
         xc, s1, s2 = set_matrix(x, intercept: false)
         yc = set_vector(y)
+
+        if weight
+          wc = set_vector(weight)
+          # in place transformation
+          check_status FFI.gsl_multifit_linear_applyW(xc, wc, yc, xc, yc)
+        end
       end
 
       # allocate solution
