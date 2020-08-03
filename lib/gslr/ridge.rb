@@ -14,6 +14,7 @@ module GSLR
         yc, y_offset = centered_vector(y)
 
         if weight
+          # TODO apply weights before centering
           raise "weight not supported with intercept yet"
         end
       else
