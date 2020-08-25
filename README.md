@@ -120,7 +120,7 @@ Add to `.travis.yml`:
 addons:
   apt:
     packages:
-    - libgsl-dev
+      - libgsl-dev
 ```
 
 ## History
