@@ -18,6 +18,7 @@ module GSLR
     if Gem.win_platform?
       ["gsl.dll"]
     elsif RbConfig::CONFIG["host_os"] =~ /darwin/i
+      self.cblas_lib = ["libgslcblas.dylib"]
       ["libgsl.dylib"]
     else
       self.cblas_lib = ["libgslcblas.so"]

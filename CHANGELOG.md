@@ -1,3 +1,7 @@
+## 0.2.0 (unreleased)
+
+- Fixed error on Mac
+
 ## 0.1.3 (2020-07-26)
 
 - Improved performance
