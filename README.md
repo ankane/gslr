@@ -15,7 +15,7 @@ brew install gsl
 Add this line to your application’s Gemfile:
 
 ```ruby
-gem 'gslr'
+gem "gslr"
 ```
 
 ## Getting Started
@@ -110,17 +110,6 @@ Use the [Apt buildpack](https://github.com/heroku/heroku-buildpack-apt) and crea
 
 ```text
 libgsl-dev
-```
-
-### Travis CI
-
-Add to `.travis.yml`:
-
-```yml
-addons:
-  apt:
-    packages:
-      - libgsl-dev
 ```
 
 ## History
