@@ -1,6 +1,7 @@
 ## 0.2.0 (unreleased)
 
 - Fixed error on Mac
+- Dropped support for Ruby < 2.7
 
 ## 0.1.3 (2020-07-26)
 
