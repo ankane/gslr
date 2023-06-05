@@ -2,10 +2,10 @@
 require "fiddle/import"
 
 # modules
-require "gslr/model"
-require "gslr/ols"
-require "gslr/ridge"
-require "gslr/version"
+require_relative "gslr/model"
+require_relative "gslr/ols"
+require_relative "gslr/ridge"
+require_relative "gslr/version"
 
 module GSLR
   class Error < StandardError; end
