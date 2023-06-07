@@ -1,3 +1,7 @@
+## 0.2.1 (unreleased)
+
+- Improved support for Mac ARM
+
 ## 0.2.0 (2022-09-02)
 
 - Fixed error on Mac
