@@ -2,7 +2,7 @@
 
 :fire: High performance linear regression for Ruby, powered by [GSL](https://www.gnu.org/software/gsl/)
 
-[![Build Status](https://github.com/ankane/gslr/workflows/build/badge.svg?branch=master)](https://github.com/ankane/gslr/actions)
+[![Build Status](https://github.com/ankane/gslr/actions/workflows/build.yml/badge.svg)](https://github.com/ankane/gslr/actions)
 
 ## Installation
 
