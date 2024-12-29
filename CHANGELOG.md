@@ -1,3 +1,7 @@
+## 0.3.1 (unreleased)
+
+- Fixed GSL detection on Mac x86-64
+
 ## 0.3.0 (2024-10-22)
 
 - Dropped support for Ruby < 3.1
