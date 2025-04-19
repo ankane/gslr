@@ -91,6 +91,10 @@ class RidgeTest < Minitest::Test
   end
 
   def test_numo
+    skip if RUBY_PLATFORM == "java"
+
+    require "numo/narray"
+
     x = Numo::SFloat.cast([[1, 3], [2, 3], [3, 5], [4, 5]])
     y = Numo::Int64.cast([10, 11, 16, 17])
 
