@@ -10,7 +10,7 @@ module GSLR
       # allocate solution
       c = FFI.gsl_vector_alloc(s2)
       cov = FFI.gsl_matrix_alloc(s2, s2)
-      chisq = Fiddle::Pointer.malloc(Fiddle::SIZEOF_DOUBLE)
+      chisq = Fiddle::Pointer.malloc(Fiddle::SIZEOF_DOUBLE, Fiddle::RUBY_FREE)
       work = FFI.gsl_multifit_linear_alloc(s1, s2)
 
       # fit

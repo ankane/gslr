@@ -32,8 +32,8 @@ module GSLR
 
       # allocate solution
       c = FFI.gsl_vector_alloc(s2)
-      rnorm = Fiddle::Pointer.malloc(Fiddle::SIZEOF_DOUBLE)
-      snorm = Fiddle::Pointer.malloc(Fiddle::SIZEOF_DOUBLE)
+      rnorm = Fiddle::Pointer.malloc(Fiddle::SIZEOF_DOUBLE, Fiddle::RUBY_FREE)
+      snorm = Fiddle::Pointer.malloc(Fiddle::SIZEOF_DOUBLE, Fiddle::RUBY_FREE)
       work = FFI.gsl_multifit_linear_alloc(s1, s2)
 
       # fit
