@@ -51,7 +51,7 @@ class OLSTest < Minitest::Test
   end
 
   def test_numo
-    skip if RUBY_PLATFORM == "java"
+    skip unless numo?
 
     x = Numo::DFloat.cast([[1, 3], [2, 3], [3, 5], [4, 5]])
     y = Numo::DFloat.cast([10, 11, 16, 17])
@@ -70,7 +70,7 @@ class OLSTest < Minitest::Test
   end
 
   def test_numo_weight
-    skip if RUBY_PLATFORM == "java"
+    skip unless numo?
 
     x = Numo::SFloat.cast([[1], [2], [3], [4]])
     y = Numo::Int64.cast([5, 7, 9, 13])
