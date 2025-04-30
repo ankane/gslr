@@ -23,6 +23,7 @@ module GSLR
       s2 += 1 if intercept
 
       xc = FFI.gsl_matrix_alloc(s1, s2)
+      xc.free = FFI["gsl_matrix_free"]
       x_ptr = FFI.gsl_matrix_ptr(xc, 0, 0)
 
       if numo?(x)
@@ -47,6 +48,7 @@ module GSLR
 
     def set_vector(x)
       v = FFI.gsl_vector_alloc(x.size)
+      v.free = FFI["gsl_vector_free"]
       ptr = FFI.gsl_vector_ptr(v, 0)
       set_data(ptr, x)
       v

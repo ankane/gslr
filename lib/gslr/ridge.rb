@@ -32,9 +32,11 @@ module GSLR
 
       # allocate solution
       c = FFI.gsl_vector_alloc(s2)
+      c.free = FFI["gsl_vector_free"]
       rnorm = Fiddle::Pointer.malloc(Fiddle::SIZEOF_DOUBLE, Fiddle::RUBY_FREE)
       snorm = Fiddle::Pointer.malloc(Fiddle::SIZEOF_DOUBLE, Fiddle::RUBY_FREE)
       work = FFI.gsl_multifit_linear_alloc(s1, s2)
+      work.free = FFI["gsl_multifit_linear_free"]
 
       # fit
       check_status FFI.gsl_multifit_linear_svd(xc, work)
@@ -51,11 +53,6 @@ module GSLR
         end
 
       nil
-    ensure
-      FFI.gsl_matrix_free(xc) if xc
-      FFI.gsl_vector_free(yc) if yc
-      FFI.gsl_vector_free(c) if c
-      FFI.gsl_multifit_linear_free(work) if work
     end
 
     private
@@ -74,6 +71,7 @@ module GSLR
 
         s1, s2 = shape(x)
         xc = FFI.gsl_matrix_alloc(s1, s2)
+        xc.free = FFI["gsl_matrix_free"]
         x_ptr = FFI.gsl_matrix_ptr(xc, 0, 0)
 
         # pack efficiently
