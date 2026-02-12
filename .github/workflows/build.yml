@@ -11,3 +11,7 @@ jobs:
           bundler-cache: true
       - run: sudo apt install libgsl-dev
       - run: bundle exec rake test
+
+      - run: |
+          sudo apt-get update && sudo apt-get install valgrind
+          bundle exec rake test:valgrind
