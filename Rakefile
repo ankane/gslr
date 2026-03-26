@@ -16,7 +16,7 @@ task default: :test
 task :benchmark do
   require "benchmark"
   require "gslr"
-  require "numo/narray"
+  require "numo/narray/alt"
 
   x = Numo::DFloat.new(100000, 10).rand
   y = Numo::DFloat.new(100000).rand
