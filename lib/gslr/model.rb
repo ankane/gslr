@@ -11,7 +11,7 @@ module GSLR
         x.dot(@coefficients) + @intercept
       else
         x.map do |xi|
-          xi.zip(@coefficients).map { |xii, c| xii * c }.sum + @intercept
+          xi.zip(@coefficients).sum { |xii, c| xii * c } + @intercept
         end
       end
     end

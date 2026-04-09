@@ -47,7 +47,7 @@ module GSLR
       @coefficients = c_ptr[0, s2 * Fiddle::SIZEOF_DOUBLE].unpack("d*")
       @intercept =
         if @fit_intercept
-          y_offset - x_offset.zip(@coefficients).map { |xii, c| xii * c }.sum
+          y_offset - x_offset.zip(@coefficients).sum { |xii, c| xii * c }
         else
           0.0
         end
@@ -66,7 +66,7 @@ module GSLR
       else
         x_offset = []
         x.first.size.times do |i|
-          x_offset << x.map { |xi| xi[i] }.sum / x.size.to_f
+          x_offset << x.sum { |xi| xi[i] } / x.size.to_f
         end
 
         s1, s2 = shape(x)
